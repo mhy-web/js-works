@@ -7,15 +7,16 @@
 	<style>
 
 		/*字体图标*/
-		@font-face {
-		  font-family: 'abc';
-		  src: url('//at.alicdn.com/t/font_1473860190_1613505.eot'); /* IE9*/
-		  src: url('//at.alicdn.com/t/font_1473860190_1613505.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		  url('//at.alicdn.com/t/font_1473860190_1613505.woff') format('woff'), /* chrome、firefox */
-		  url('//at.alicdn.com/t/font_1473860190_1613505.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-		  url('//at.alicdn.com/t/font_1473860190_1613505.svg#iconfont') format('svg'); /* iOS 4.1- */
-		}
+@font-face {
+  font-family: 'abc';
+  src: url('//at.alicdn.com/t/font_1475071489_0285044.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1475071489_0285044.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1475071489_0285044.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1475071489_0285044.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1475071489_0285044.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
                     
+                                
 		.icon-search:before{
 			content: '\e600';
 			font-family: abc;
@@ -36,7 +37,14 @@
 			content: '\e604';
 			font-family: abc;
 		}
-
+		.icon-star2:before{
+			content: '\e605';
+			font-family: abc;
+		}
+		.icon-down:before{
+			content: '\e606';
+			font-family: abc;
+		}
 
 		/* css reset*/
 
@@ -53,7 +61,7 @@
 			font-family: 'sans-serif';
 			font-size: 14px;
 			color: #181818;
-			line-height: 1.5;
+			line-height: 1.2;
 			background-color: #fff;
 		}
 		a{
@@ -151,7 +159,46 @@
 		}
 
 
+		/*aside*/
+
+		#main .aside{
+			float: right;
+			width: 200px;
+			height: 600px;
+			background: red;
+		}
+
+
+
+
+
+		/*content*/
+
+		#main .content{
+			margin-right: 210px;
+		}
+
+
+		#foot{
+			background: black;
+			height: 100px;
+		}
+
+
+
 		
+
+@media screen and (max-width: 600px) { 
+  body {
+    background: blue;
+
+  }
+@media screen and (max-width: 400px) { 
+  body {
+    background: red;
+
+  }
+
 
 
 
@@ -197,10 +244,290 @@
 
 
 	</div>
-	<div id="main" class="layout">
-		<div class="content"></div>
-		<div class="aside"></div>
+	<div id="main" class="layout clearfix">
+	  <div class="aside"></div>
+		<div class="content">
+			<div class="products">
+				<h2>Our Favorite Mac Apps</h2>
+				<ul>
+
+<style type="text/css">
+	#main .products>h2{
+		color: #57575f;
+		font-size: 14px;
+		margin-top: 32px;
+		padding-bottom: 4px;
+		border-bottom: 1px solid #ccc;
+	}
+	#main .item{
+		float: left;
+		width: 25%;
+		margin-top: 14px;
+		margin-bottom: 20px;
+	}	
+
+	#main .item-logo{
+		float: left;
+	}
+	#main .item-logo>img{
+		width: 75px;
+		height: 75px;
+	}
+	#main .detail{
+		font-size: 12px;
+		margin-left: 84px;
+	}
+	#main .detail .title{
+		color: #181818;
+		text-decoration: none;
+	}
+	#main .detail .score{
+		height: 20px;
+		color: #fd7737;
+	}
+	#main .detail>p{
+		color: #a5a5ad;
+	}
+	#main .detail .btn-download{
+		background-color: #a4a5ab;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+    padding-right: 5px;
+    border-radius: 5px;
+    display: inline-block;
+	}
+	#main .detail .text {
+    border-right: 2px solid #8e8f91;
+    padding: 1px 6px;
+    display: inline-block;
+	}
+	#main .detail .icon-down{
+		color: #dfdfd1;
+    font-size: 12px;
+	}
+
+</style>
+
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score"></div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-caret"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+					<li class="item">
+						<a class="item-logo" href="/"><img src="imgs/icon-app1.png"></a>
+						<div class="detail">
+							<a class="title" href="/"> macOS Sierra</a>
+							<p>工具</p>
+							<div class="score">
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star"></span>
+								<span class="icon-star2"></span>
+								<span class="icon-star2"></span>
+							</div>
+							<a class="btn-download" href="/">
+								<span class="text">下载</span>
+								<span class="icon-down"></span>
+							</a>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+			<div class="logos"></div>
+		</div>
+		
 	</div>
-	<div id="foot" class="layout"></div>
+	<div id="foot" class="layout">
+		hello jirengu
+	</div>
 </body>
 </html>
