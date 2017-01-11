@@ -309,10 +309,10 @@ var player = (function() {
             this.$target.on('click', function(e) {
                 e.stopImmediatePropagation();
                 var pos = {
-                    right: self.$target.offset().left + self.$target.outerWidth(true),
+                    left: self.$target.offset().left + self.$target.outerWidth(true) - self.$ct.outerWidth(),
                     top: self.$target.offset().top + self.$target.outerHeight(true) + 10
                 }
-                self.$ct.css({top: pos.top, right: pos.right})
+                self.$ct.css({top: pos.top, left: pos.left})
                 self.$ct.toggleClass('cur');
             });
 
