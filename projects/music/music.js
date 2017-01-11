@@ -179,7 +179,7 @@ var player = (function() {
 
     Player.prototype.createElement = function() {
         $('head').append('<meta name="referrer" content="no-referrer">');
-        $('head').append('<link rel="stylesheet" id="__player_container__css" href="http://cdn.jirengu.com/music/music.css">')
+        $('body').append('<link rel="stylesheet" id="__player_container__css" href="http://book.jirengu.com/jirengu-inc/js-works/projects/music/music.css">')
         //下面的不是注释，千万不要删除
         var playerHtml = str(function() {/*
             <div id="__player_container__">
