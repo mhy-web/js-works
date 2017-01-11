@@ -312,7 +312,7 @@ var player = (function() {
                     right: self.$target.offset().left + self.$target.outerWidth(true),
                     top: self.$target.offset().top + self.$target.outerHeight(true) + 10
                 }
-                self.$ct.css({top: pos.top, left: pos.left})
+                self.$ct.css({top: pos.top, right: pos.right})
                 self.$ct.toggleClass('cur');
             });
 
