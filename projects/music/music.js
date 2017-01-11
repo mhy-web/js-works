@@ -308,6 +308,11 @@ var player = (function() {
             //hide or show
             this.$target.on('click', function(e) {
                 e.stopImmediatePropagation();
+                var pos = {
+                    right: self.$target.offset().left + self.$target.outerWidth(true),
+                    top: self.$target.offset().top + self.$target.outerHeight(true) + 10
+                }
+                self.$ct.css({top: pos.top, left: pos.left})
                 self.$ct.toggleClass('cur');
             });
 
