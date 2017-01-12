@@ -182,7 +182,7 @@ var player = (function() {
         $('body').append('<link rel="stylesheet" id="__player_container__css" href="http://book.jirengu.com/jirengu-inc/js-works/projects/music/music.css">')
         //下面的不是注释，千万不要删除
         var playerHtml = str(function() {/*
-            <div id="__player_container__">
+            <div id="__player_container__" style="display:none">
                 <audio class="media" src="">
                     not support the audio tag
                 </audio>
