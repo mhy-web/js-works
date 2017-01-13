@@ -43,7 +43,7 @@
 $('.btn-useage').on('click', function(e){
   e.preventDefault();
   Dialog.open()
-  $.get('http://jirenguapi.applinzi.com',{type:'github', url:'https://github.com/jirengu/server-mock'}).done(function(tpl){
+  $.get('http://api.jirengu.com',{type:'github', url:'https://github.com/jirengu/server-mock'}).done(function(tpl){
     Dialog.open(tpl);
 
     $('pre code').each(function(i, block) {
