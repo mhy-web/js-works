@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>音乐播放器</title>
   <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="referrer" content="never">
   <style>
     .musicbox {
       width: 900px;
@@ -37,7 +38,7 @@
 <body>
   <div class="musicbox">
     <div>
-      <button id="btn-cate">获取分类</button>
+      <button id="btn-cate">获取分类</button> 点击获取分类，再单击对应的专辑
     </div>
     <div>
       <div class="cate">
@@ -63,6 +64,8 @@
   var songCt = $('.detail>dl')
   var lrcCt = $('.lrc>pre')
 
+  var music = new Audio()
+
   cateBtn.onclick = function(){
     get('http://api.jirengu.com/fm/getChannels.php', {}, function(ret){
       renderCate(ret.channels)
@@ -76,6 +79,7 @@
       console.log(ret)
       renderSong(ret.song[0])
       getLrc(ret.song[0].lrc)
+      play(ret.song[0].url)
     })
   }
 
@@ -101,6 +105,11 @@
     get(lrcUrl,{},function(ret){
       lrcCt.innerHTML = ret
     },'text')
+  }
+
+  function play(url) {
+    music.src = url
+    music.play()
   }
 
 
