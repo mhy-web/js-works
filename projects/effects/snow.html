@@ -5,7 +5,7 @@
   <title>下雪</title>
   <style>
   
-  html,body,header{
+html,body,header{
   height: 100%;
 }
 body {
@@ -13,6 +13,7 @@ body {
 }
 header {
   overflow: hidden;
+  width: 100%;
   background: linear-gradient(to bottom, #7dbacc, #fafcfd); 
 }
 .cloud-two {
@@ -31,6 +32,7 @@ header {
     background-size: 55.7rem 22.3rem;
     background-repeat: no-repeat;
     background-image: url(http://7xpvnv.com2.z0.glb.qiniucdn.com/10d3e21a-8f76-4994-a200-fff3462256e2?n=cloud1);
+    animation: cloud 120s linear infinite;
 }
 
 
@@ -42,8 +44,6 @@ header {
     right: -10%;
     width: 72.4rem;
     height: 25.6rem;
-    -webkit-background-size: 72.4rem 25.6rem;
-    -moz-background-size: 72.4rem 25.6rem;
     background-size: 72.4rem 25.6rem;
     background-repeat: no-repeat;
     background-image: url(http://7xpvnv.com2.z0.glb.qiniucdn.com/f8f04999-2cd9-4ec9-85e2-bbefe1c50cbc?n=cloud2);
@@ -64,60 +64,61 @@ header:before {
     content: " ";
     display: block;
     position: absolute;
-    top: 0;
-    left: -50%;
-    width: 200%;
-    height: 100%;
+    top: -6000px;
+    width: 2000px;
+    height: 8000px;
     z-index: 1;
 
     background-size: 40rem 40rem;
+    background-repeat: repeat;
     background-image: url(http://7xpvnv.com2.z0.glb.qiniucdn.com/a5a38ae3-6ade-478e-b60f-6c98e1750645?n=snow2);
 
-    animation: snow 28s linear infinite;
-    opacity: 1;
-    transition: opacity 10s;
+    animation: snow 70s linear infinite;
+
 }
 header:after {
     content: " ";
     display: block;
     position: absolute;
-    top: 0;
-    left: -50%;
-    width: 200%;
-    height: 100%;
+    top: -6000px;
+    width: 2000px;
+    height: 8000px;
     z-index: 10;
 
     background-size: 40rem 40rem;
+    background-repeat: repeat;
     background-image: url(http://7xpvnv.com2.z0.glb.qiniucdn.com/cc9d6f8e-aee0-4e50-80b2-2e633448dd40?n=snow1);
 
-    animation: snow 18s linear infinite;
-    opacity: 1;
-    transition: opacity 5s;
-  overflow: hidden;
+    animation: snow 45s linear infinite;
+    overflow: hidden;
 }
 
 @keyframes snow{
   0%{
-
-    background-position-x:0;
-    background-position-y:0;
-  }
-  50% {
-    background-position-y:40rem;
+    transform: translateY(0);
   }
   100%{
-    background-position-x:40rem;
-    background-position-y:80rem
+    transform: translateY(8000px);
   }
 }
-  
+@keyframes cloud{
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(1400px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
   
   </style>
 </head>
 <body>
   <header>
     <div class="cloud1"></div>
-    <div class="cloud2"></div>
+<!--     <div class="cloud2"></div> -->
     <div class="grass"></div>
   </header>
 </body>
