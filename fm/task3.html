@@ -49,6 +49,7 @@
         }
 
         .fm-box {
+            position: relative;
             width: 340px;
             border-radius: 5px;
             margin: 30px auto;
@@ -227,6 +228,21 @@
         .fm-box .buttons .icon-next{
             float: right;
         }
+        .fm-box footer {
+            text-align: center;
+            position: absolute;
+            bottom: -30px;
+            width: 100%;
+        }
+        .fm-box footer li {
+            display: none;
+            color: #91bdb4;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .fm-box footer li.active {
+            display: block;
+        }
     </style>
 </head>
 
@@ -269,7 +285,12 @@
                 </div>
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            <ul>
+                <li>In this dream it seems</li>
+                <li class="active">It was my perfect day</li>
+            </ul>
+        </footer>
     </div>
 
 </body>
