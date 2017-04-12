@@ -1,0 +1,87 @@
+<script>
+
+class Promise {
+  constructor(){
+    this.calllbacks = []
+  }
+
+  then(onsuccess, onfail){
+    this.calllbacks.push({
+      resolve: onsuccess,
+      reject: onfail
+    })
+    return this
+  }
+
+  resolve(result){
+    this.complete('resolve', result)
+  }
+
+  reject(result){
+    this.complete('reject', result)
+  }
+
+  complete(type, result){
+    var callbackObj = this.calllbacks.shift()
+    callbackObj[type](result)
+  }
+
+}
+
+// function Promise(){
+
+// }
+
+// Promise.prototype.then = function(){
+
+// }  
+
+/*
+$.get(url, fuction(data){
+  console.log(data)
+  $.get(url2, function(data){
+    console.log(data)
+    $.get(url3, function(){
+      $.get(url4, function(){
+
+      })
+    })
+  })
+})
+
+$.get(url)
+  .then()
+  .then()
+  .then()
+  .then()
+
+*/
+
+var p = new Promise()
+
+function fn() {
+  console.log('fn1')
+  setTimeout(function(){
+    p.reject('data1')
+  }, 1000)
+  return p
+}
+
+function fn1(result){
+  console.log('fn1', result)
+  setTimeout(function(){
+    p.resolve('data2')
+  }, 2000)
+}
+
+function fn2(result){
+  console.log('fn2', result)
+}
+function fn3(result){
+  console.log('fn3', result)
+}
+
+fn().then(fn1,fn3).then(fn2)
+
+//[{resolve:fn1, reject: undefined},{resolve: fn2, reject: fn3 }]
+</script>

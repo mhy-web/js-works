@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--<link rel="stylesheet" href="css/index.css">-->
+
+  <style>
+    /*css reset*/
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    ul,
+    ol {
+      list-style: none;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    /*common css */
+    
+    .layout {
+      width: 900px;
+      margin: 0 auto;
+    }
+    
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    
+    .btn {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 15px;
+      background-color: #fed136;
+      color: #fff;
+      display: inline-block;
+      border-radius: 4px;
+    }
+    
+    body {
+      font: 14px/1.5 Arial;
+      color: #666;
+      min-width: 900px;
+    }
+    /*page css*/
+    
+    html,
+    body {
+      height: 100%;
+    }
+    
+    #header {
+      background: url(./imgs/bg.jpg) center center no-repeat;
+      background-size: cover;
+      height: 100%;
+      position: relative;
+    }
+    
+    #header .menu a {
+      color: #fff;
+    }
+    
+    #header .menu a:hover {
+      color: #fed136;
+    }
+    
+    #header .logo {
+      height: 70px;
+      float: left;
+    }
+    
+    #header .menu {
+      float: right;
+      padding-top: 20px;
+    }
+    
+    #header .menu>li {
+      float: left;
+      margin-right: 10px;
+    }
+    
+    #header .head-intro {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+    #header .head-intro h2 {
+      color: #fff;
+      font-size: 32px;
+    }
+    
+    #header .head-intro h1 {
+      color: #fff;
+      font-size: 60px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <div class="nav clearfix layout">
+      <img class="logo" src="https://jirengu.com/data/upload/2017/0118/17/587f39fba695a.png" alt="logo">
+      <ul class="menu">
+        <li> <a href="#">SERVICES</a> </li>
+        <li><a href="">PORTFOLIO</a> </li>
+        <li><a href="">PORTFOLIO</a> </li>
+        <li><a href="">PORTFOLIO</a> </li>
+      </ul>
+    </div>
+    <div class="head-intro">
+      <h2>Welcome To Our Studio!</h2>
+      <h1>IT'S NICE TO MEET YOU</h1>
+      <a href="" class="btn">TELL ME MORE</a>
+    </div>
+  </div>
+  <div id="content">
+    <h1>content</h1>
+  </div>
+  <div id="footer"></div>
+</body>
+
+</html>

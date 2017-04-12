@@ -1,0 +1,73 @@
+<script>
+  class Promise {
+    constructor (){
+      this.callbacks = []
+      this.oncatch = null
+    }
+
+    reject(result){
+      this.complete('reject', result)
+    }
+
+    resolve(result){
+      this.complete('resolve', result)
+    }
+
+    complete(type, result){
+      if(type==='reject' && this.oncatch){
+        this.callbacks = []
+        this.oncatch(result)
+      }else if(this.callbacks[0]) { 
+        var handlerObj = this.callbacks.shift()
+        if(handlerObj[type])  handlerObj[type](result)
+      }
+    }
+
+    then(onsuccess, onfail){
+      this.callbacks.push({
+        resolve: onsuccess,
+        reject: onfail
+      })
+      return this
+    }
+
+    catch(onfail){
+      this.oncatch = onfail
+      return this
+    }
+  }
+
+  let p = new Promise()
+
+  function f1() {
+    console.log('f1...')
+    setTimeout(function(){
+      p.resolve('1')
+    }, 1000)
+    return p
+  }
+
+  function f2(result){
+    console.log('f2...', result)
+    setTimeout(function(){
+      p.resolve('2')
+    }, 1000)
+  }
+
+  function f3(result){
+    console.log('f3...', result)
+    setTimeout(function(){
+      console.log('f3 over...')
+      //p.reject('2')
+    }, 1000)
+  }
+
+  function f4(result){
+    console.log('f4...', result)
+  }
+  
+  f1().then(f2).then(f3, f4)
+  f1().then(f2).then(f3).catch(f4)
+
+
+</script>
