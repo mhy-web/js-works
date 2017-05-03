@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>抛物线</title>
+  <style>
+    .ball{
+      position: absolute;
+      bottom: 20px;
+      left: 100px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0,0,0,0.2);
+      box-shadow: 6px 3px 12px 3px rgba(0,0,0,0.4), 3px 15px 25px 5px rgba(255, 255, 255, 0.6) inset
+    }
+  </style>
+</head>
+<body>
+  <div class="ball" id=ball></div>
+  <script>
+    
+    var Parabola = (function(){
+      
+      var a = -.005
+      var b
+      var c
+      var target
+      var start = {}
+      var cur = {}
+      var end = {}
+
+      function send(node, endPos){
+        end = endPos
+        target = node
+
+        start.x = parseInt(getComputedStyle(node).left) + parseInt(getComputedStyle(node).width)/2
+        start.y = 0 - (parseInt(getComputedStyle(node).top) + parseInt(getComputedStyle(node).height)/2)
+
+        cur.x = start.x
+        cur.y = start.y
+
+        b = (start.y - end.y - a * (start.x * start.x - end.x * end.x))/(start.x - end.x)
+        c = start.y - a * start.x * start.x - b * start.x
+        draw()
+      }
+
+      function draw(){
+        cur.x = cur.x + 10
+        cur.y = a * cur.x * cur.x + b * cur.x + c
+        target.style.left = cur.x + 'px'
+        target.style.top = (0 - cur.y )+ 'px'
+        if(cur.x < end.x){
+          requestAnimationFrame(draw);
+        } 
+      }
+
+      return {
+        send: send
+      }
+    })()
+
+    Parabola.send(ball, {x:800, y: -700})
+
+
+    
+
+  </script>
+</body>
+</html>
