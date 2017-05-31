@@ -1,7 +1,18 @@
 /**
  button 
 **/
-.button, button {
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #ea6f5a;
+  border-radius: 4px;
+  color: #ea6f5a;
+  text-decoration: none;
+}
+
+
+/*.button, button {
   display: inline-block;
   padding: 6px 12px;
   font-size: 15px;
@@ -11,7 +22,7 @@
   color: #ea6f5a;
   user-select: none;
   cursor: pointer;
-}
+}*/
 
 .button.color-invert {
   background-color: #ea6f5a;
@@ -54,21 +65,18 @@ img button
 
 .img-button {
   display: inline-block;
-  border-radius: 4px;
-  height: 32px;
-  line-height: 32px;
-  padding-right: 10px;
-  text-align: center;
+  padding-right: 8px;
   color: #333;
   background-color: #f7f7f7;
   text-decoration: none;
+  border-radius: 4px;
   overflow: hidden;
 }
 .img-button img {
   width: 32px;
   height: 32px;
-  margin-right: 10px;
-  vertical-align: top;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 
 
@@ -79,11 +87,11 @@ label
 .label {
   display: inline-block;
   padding: 1px 4px;
-  font-size: 12px;
-  color: #ea6f5a;
   border: 1px solid #ea6f5a;
   border-radius: 4px;
+  font-size: 12px;
   text-decoration: none;
+  color: #ea6f5a;
 }
 
 /**

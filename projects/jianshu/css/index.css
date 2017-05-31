@@ -4,10 +4,12 @@ header {
 }
 header nav {
   position: fixed;
+  z-index: 1;
   padding: 0 20px;
   height: 58px;
   width: 100%;
   border-bottom: 1px solid #f0f0f0;
+  background-color: #fff;
 }
 header .logo {
   float: left;
@@ -42,10 +44,36 @@ header .write {
   margin-top: 12px;
 }
 
-main {
-  height: 1000px;
+main:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+main .layout >.aside {
+  width: 200px;
+  float: right;
+}
+main .layout >.content {
+  margin-right: 220px;
 }
 
-.carousel {
+main .carousel {
   margin: 0 auto;
 }
+
+main .theme-labels {
+  margin-top: 30px;
+}
+
+main .post-lists {
+  margin-top: 30px;
+}
+
+main .recommend {
+  margin-top: 30px;
+}
+main .recommend .button {
+  margin-top: 30px;
+}
+
+
