@@ -1,0 +1,51 @@
+
+header {
+  padding-bottom: 58px;
+}
+header nav {
+  position: fixed;
+  padding: 0 20px;
+  height: 58px;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+}
+header .logo {
+  float: left;
+  margin-top: 18px;
+  margin-right: 20px;
+}
+header .logo img{
+  width: 55px;
+  height: 26px;
+}
+header .search {
+  float: left;
+  margin-top: 12px;
+}
+
+header .login {
+  float: right;
+  margin-left: 20px;
+  margin-top: 18px;
+  color: #969696;
+  text-decoration: none;
+}
+
+header .register {
+  float: right;
+  margin-left: 20px;
+  margin-top: 12px;
+}
+header .write {
+  float: right;
+  margin-left: 20px;
+  margin-top: 12px;
+}
+
+main {
+  height: 1000px;
+}
+
+.carousel {
+  margin: 0 auto;
+}
