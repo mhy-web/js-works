@@ -50,16 +50,16 @@
       margin-right: 10px;
     }
 
-    .tree .children>span:before {
+    .tree .has-child>span:before {
       content:'+'
     }
-    .tree .children.open>span:before {
+    .tree .has-child.open>span:before {
       content:'-'
     }
-    .tree .children>ul {
+    .tree .has-child>ul {
       display: none;
     }
-    .tree .children.open>ul {
+    .tree .has-child.open>ul {
       display: block;
     }
 
@@ -67,16 +67,16 @@
   </style>
 </head>
 <body>
-  <div class="menu">
+  <div class="menu" data-menu="{}">
     <!--
     <ul class="tree">
-      <li class="children open">
-        <span>课程</span>
+      <li class="has-child open">
+        <span><a href="http://a.com">课程</a></span>
         <ul>
           <li>
             <span>后端</span>
           </li>
-          <li class="children">
+          <li class="has-child">
             <span>前端</span>
             <ul>
               <li>
@@ -89,7 +89,7 @@
           </li>
         </ul>
       </li>
-      <li class="children">
+      <li class="has-child open">
         <span>文章</span>
         <ul>
           <li>
@@ -102,12 +102,16 @@
       </li>
     </ul>-->
   </div>
-  <div class="main"></div>
+  <div class="main">
+    content
+
+  </div>
 
 <script>
   
 (function($){
   $.fn.tree = function(data){
+    console.log(1, data)
     var $node = $('<ul class="tree"></ul>')
     createNode($node,data)
     console.log(this)
@@ -116,8 +120,9 @@
     $node.on('click', 'span', function(){
       var $span = $(this)
       var $parent = $span.parent()
+      console.log($parent)
       //var $children = $parent.children('ul')
-      if($parent.hasClass('children')){
+      if($parent.hasClass('has-child')){
         //$children.slideToggle()
         $parent.toggleClass('open')
       }
@@ -140,7 +145,7 @@
           $li.addClass('open')
         }
         if(item.children){
-          $li.addClass('children')
+          $li.addClass('has-child')
           var $ul = $('<ul></ul>')
           createNode($ul, item.children)
           $li.append($ul)
@@ -154,52 +159,136 @@
 
 
 
+/*
 
-
-
-
-var treeData = [
+var data = [
   {
-    title: '课程',
+    name: '课程',
     children: [
       {
-        title: '后端',
-        link: '#1'
+        name: '后端',
+        path: 'http://a.com'
       },
       {
-        title: '前端',
+        name: '前端',
         children: [
           {
-            title: '必修班',
-            link: '#2'
+            name: '必修班',
+            path: 'http://a.com'
           },
           {
-            title: '任务班',
-            link: '#3'
+            name: '任务班',
+            path: 'http://a.com'
           }
         ]
       }
     ]
   },
   {
-    title: '文章',
+    name: '文章',
     is_open: true,
     children: [
       {
-        title: '技术',
-        link: '#4'
+        name: '技术'
       },
       {
-        title: '灌水',
-        link: '#5'
+        name: '灌水',
+        children: [
+          {
+            name: '生活'
+          },
+          {
+            name: '工作',
+            is_open: true,
+            children: [
+              {
+                name: '求职'
+              },
+              {
+                name: '换工作'
+              }
+            ]
+          }
+        ]
       }
     ]
   }
 ]
 
+  $('.menu').on('click','span', function(){
+    var $title = $(this)
+    var $li = $title.parent()
+    if($li.hasClass('has-child')){
+      $li.toggleClass('open')
+    }
+  })
 
-$('.menu').tree(treeData)
-$('.menu').tree(treeData)
+  var $node = $('<ul class="tree"></ul>')
+  createNode($node,data)
+
+  $('.menu').append($node)
+
+
+
+  function createNode($tree, data){
+      $.each(data, function(index, item){
+        var $li = $('<li></li>')
+        var $title = $('<span></span>')
+
+        if(item.path){
+          $title.html('<a href="'+item. path+'">' + item.name + '</a>')
+        }else{
+           $title.text(item.name)
+         }
+        $li.append($title)
+
+        if(item.is_open){
+          $li.addClass('open')
+        }
+        if(item.children){
+          $li.addClass('has-child')
+          var $ul = $('<ul></ul>')
+          createNode($ul, item.children)
+          $li.append($ul)
+        }
+        $tree.append($li)
+      })
+
+  }
+
+
+*/
+
+
+
+
+
+
+
+// $.fn.hello = function(){
+//   this.addClass('hello')
+// }
+
+// $('.menu').hello()
+
+
+$.get('/getData')
+  .done(function(ret){
+    console.log(ret)
+    $('.menu').tree(ret)
+  })
+$.get('/getData')
+  .done(function(ret){
+
+    $('.menu').tree(ret)
+  })
+
+//
+
+
+
+
+//$('.menu').tree(treeData)
 
 
 
