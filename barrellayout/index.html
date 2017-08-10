@@ -65,8 +65,8 @@
         img.src = imgs[i];
         img.onload = function(){
           var imgInfo = {
-            target : img,
-            width: 200* (img.width/img.height),
+            target : this,
+            width: 200* (this.width/this.height),
             height: 200
           };
           _this.render(imgInfo);
@@ -154,7 +154,7 @@
                 ratio = originWidth/originHeight;
 
             var imgInfo = {
-              target: $(img),
+              target: $(this),
               width: _this.baseHeight*ratio,
               height: _this.baseHeight,
               ratio: ratio
